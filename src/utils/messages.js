@@ -1,13 +1,14 @@
 import invariant from 'invariant';
 
+//언어 설정 여기다
  let defaultMessages = {
      date: 'Date',
      time: 'Time',
      event: 'Event',
      allDay: '종일',
-     week: '주',
-     day: '일',
-     month: '월',
+     week: '주간',
+     day: '일간',
+     month: '월간',
      previous: '이전',
      next: '다음',
      yesterday: '어제',
