@@ -1,20 +1,19 @@
 import invariant from 'invariant';
 
  let defaultMessages = {
-  date: 'Date',
-  time: 'Time',
-  event: 'Event',
-  allDay: 'all day',
-  week: 'week',
-  work_week: 'work week',
-  day: 'day',
-  month: 'month',
-  previous: 'back',
-  next: 'next',
-  yesterday: 'yesterday',
-  tomorrow: 'tomorrow',
-  today: 'today',
-  agenda: 'agenda',
+     date: 'Date',
+     time: 'Time',
+     event: 'Event',
+     allDay: '종일',
+     week: '주',
+     day: '일',
+     month: '월',
+     previous: '이전',
+     next: '다음',
+     yesterday: '어제',
+     tomorrow: '내일',
+     today: '오늘',
+     agenda: 'agenda',
 
   showMore: total => `+${total} more`
 }

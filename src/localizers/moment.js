@@ -14,7 +14,7 @@ let weekRangeFormat = ({ start, end }, culture, local)=>
 
 export let formats = {
   dateFormat: 'DD',
-  dayFormat: 'ddd DD/MM',
+  dayFormat: 'MM/DD ddd',  //여기도
   weekdayFormat: 'ddd',
 
   selectRangeFormat: timeRangeFormat,
@@ -22,7 +22,7 @@ export let formats = {
 
   timeGutterFormat: 'LT',
 
-  monthHeaderFormat: 'MMMM YYYY',
+  monthHeaderFormat: 'YYYY MMMM',  //여기다
   dayHeaderFormat: 'dddd MMM DD',
   dayRangeHeaderFormat: weekRangeFormat,
   agendaHeaderFormat: dateRangeFormat,
