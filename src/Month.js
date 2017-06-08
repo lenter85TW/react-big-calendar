@@ -87,6 +87,8 @@ class MonthView extends React.Component {
       rowLimit: 5,
       needLimitMeasure: true,
     }
+
+    console.log('monthView props : ', this.props);
   }
 
   componentWillReceiveProps({ date }) {
@@ -202,6 +204,8 @@ class MonthView extends React.Component {
       culture,
     } = this.props
 
+      let holiday = this.props.holiday
+
     let isOffRange = dates.month(date) !== dates.month(currentDate)
     let isCurrent = dates.eq(date, currentDate, 'day')
     let drilldownView = getDrilldownView(date)
@@ -219,6 +223,7 @@ class MonthView extends React.Component {
       >
         <DateHeaderComponent
           label={label}
+          holiday={holiday}
           date={date}
           drilldownView={drilldownView}
           isOffRange={isOffRange}

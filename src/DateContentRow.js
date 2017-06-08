@@ -98,9 +98,19 @@ class DateContentRow extends React.Component {
   }
 
   renderHeadingCell = (date, index) => {
+    //renderHeader는 함수네. 매개변수를 받아서 div를 리턴하는 함수.
     let { renderHeader, range } = this.props;
 
-    return renderHeader({
+
+    //여기다. 여기서 eventPropGetter 처럼 datePropGetter 를 만들어보자.
+      // 아니면 EventCell.js에서 event가 배치되고 componentDidMount에서 이벤트의 부모노드를 찾아서 다시 그 자식노드를 찾아 날짜를 바꾸는 방법도??
+
+
+
+
+
+
+    return renderHeader({  //renderHeader에 객체를 넘겨주면 리턴값으로 div가 나오네.
       date,
       key: `header_${index}`,
       style: segStyle(1, range.length),
@@ -137,7 +147,7 @@ class DateContentRow extends React.Component {
     const {
       rtl,
       events,
-      range,
+      range,    //range는 1월 1일, 1월 2일 ... 1월 7일등 일주일치 Date객체가 배열로 들어있다.
       className,
       selectable,
       renderForMeasure,

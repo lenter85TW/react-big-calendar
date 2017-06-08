@@ -438,6 +438,7 @@ class Calendar extends React.Component {
      agenda: PropTypes.node,
      showMore: PropTypes.func
    })
+
  };
 
  static defaultProps = {
@@ -492,6 +493,7 @@ class Calendar extends React.Component {
  };
 
  render() {
+     console.log('calendar props : ', this.props);
    let {
        view, toolbar, events
      , culture

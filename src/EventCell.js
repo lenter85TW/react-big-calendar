@@ -61,7 +61,7 @@ class EventCell extends React.Component {
         >
           <div className='rbc-event-content' title={title}>
             { Event
-              ? <Event event={event} title={title}/>
+              ? <Event event={event} title={title}/>  //Event 컴포넌트의 프로퍼티로 event와 title을 주는군.
               : title
             }
           </div>
