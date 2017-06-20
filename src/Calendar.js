@@ -493,7 +493,7 @@ class Calendar extends React.Component {
  };
 
  render() {
-     console.log('calendar props : ', this.props);
+     //console.log('calendar props : ', this.props);
    let {
        view, toolbar, events
      , culture

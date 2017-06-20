@@ -100,8 +100,9 @@ class MonthView extends React.Component {
   componentDidMount() {
     let running
 
+      console.log('componentDidMount - needLimitMeasrue : ', this.state.needLimitMeasure);
     if (this.state.needLimitMeasure) this.measureRowLimit(this.props)
-
+    console.log(this.state.rowLimit)
     window.addEventListener(
       'resize',
       (this._resizeListener = () => {
@@ -117,6 +118,7 @@ class MonthView extends React.Component {
   }
 
   componentDidUpdate() {
+      console.log('componentDidUpdate - needLimitMeasrue : ', this.state.needLimitMeasure);
     if (this.state.needLimitMeasure) this.measureRowLimit(this.props)
   }
 
@@ -223,7 +225,7 @@ class MonthView extends React.Component {
       >
         <DateHeaderComponent
           label={label}
-          holiday={holiday}
+          holiday={holiday} //홀리데이 휴가 추가
           date={date}
           drilldownView={drilldownView}
           isOffRange={isOffRange}

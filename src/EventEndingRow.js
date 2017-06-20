@@ -27,6 +27,9 @@ class EventEndingRow extends React.Component {
 
     let current = 1, lastEnd = 1, row = []
 
+      console.log('이벤트 엔딩 로우 segments, slots, rowSegments : ', segments, slotCount, rowSegments);
+      //                                                                                 event 객체
+
     while (current <= slotCount) {
       let key = '_lvl_' + current
 
@@ -74,10 +77,11 @@ class EventEndingRow extends React.Component {
       </div>
     )
   }
-  S
+
 
   canRenderSlotEvent(slot, span) {
     let { segments } = this.props
+      console.log('canRenderSlotEvent slot, span : ', slot, span);
 
     return range(slot, slot + span).every(s => {
       let count = eventsInSlot(segments, s)

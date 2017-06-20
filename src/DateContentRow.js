@@ -92,6 +92,12 @@ class DateContentRow extends React.Component {
   getRowLimit() {
     let eventHeight = getHeight(this.eventRow);
     let headingHeight = this.headingRow ? getHeight(this.headingRow) : 0
+
+      //첫 화면 showMore 뜨는 원인 지역.
+      // if(headingHeight === 126){
+      //     headingHeight = 18;
+      // }
+
     let eventSpace = getHeight(findDOMNode(this)) - headingHeight;
 
     return Math.max(Math.floor(eventSpace / eventHeight), 1)
@@ -123,6 +129,7 @@ class DateContentRow extends React.Component {
 
   renderDummy = () => {
     let { className, range, renderHeader } = this.props;
+
     return (
       <div className={className}>
         <div className='rbc-row-content'>
