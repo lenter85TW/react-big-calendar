@@ -22,9 +22,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-align: stretch;
-      align-items: stretch;
+  align-items: stretch;
 }
 .rbc-calendar *,
 .rbc-calendar *:before,
@@ -53,8 +53,9 @@ button.rbc-input::-moz-focus-inner {
   direction: rtl;
 }
 .rbc-off-range {
-  color: #b3b3b3;
+  color: #b3b3b3 !important;
 }
+
 .rbc-header {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,19 +76,25 @@ button.rbc-input::-moz-focus-inner {
 .rbc-row-content {
   position: relative;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   z-index: 4;
 }
 .rbc-today {
   background-color: #eaf6ff;
 }
+
+.holiday {
+  color: red;
+}
+
+
 .rbc-toolbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   margin-bottom: 10px;
   font-size: 16px;
 }
@@ -114,15 +121,15 @@ button.rbc-input::-moz-focus-inner {
 .rbc-toolbar button.rbc-active {
   background-image: none;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  background-color: #38aee1;
+  border-color: #ffffff;
 }
 .rbc-toolbar button:active:hover,
 .rbc-toolbar button.rbc-active:hover,
 .rbc-toolbar button:active:focus,
 .rbc-toolbar button.rbc-active:focus {
-  color: #373a3c;
-  background-color: #d4d4d4;
+  color: #ffffff;
+  background-color: #38aee1;
   border-color: #8c8c8c;
 }
 .rbc-toolbar button:focus {
@@ -171,6 +178,8 @@ button.rbc-input::-moz-focus-inner {
 .rbc-btn-group + button {
   margin-left: 10px;
 }
+
+
 .rbc-event {
   cursor: pointer;
   padding: 2px 5px;
@@ -178,6 +187,33 @@ button.rbc-input::-moz-focus-inner {
   border-radius: 5px;
   color: #fff;
 }
+
+
+.rbc-event-ptop {
+  cursor: pointer;
+  padding: 2px 5px;
+  background-color: #3174ad;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.rbc-event-group {
+  cursor: pointer;
+  padding: 2px 5px;
+  background-color: lightcoral;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.rbc-event-user {
+  cursor: pointer;
+  padding: 2px 5px;
+  background-color: yellowgreen;
+  border-radius: 5px;
+  color: #fff;
+}
+
+
 .rbc-event.rbc-selected {
   background-color: #265985;
 }
@@ -207,7 +243,7 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row !important;
 }
 .rbc-row-segment {
   padding: 0 1px 1px 1px;
@@ -230,18 +266,20 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  flex: 1 0 0;
   width: 100%;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   height: 100%;
 }
 .rbc-month-view .rbc-header {
   border-bottom: 1px solid #DDD;
+  text-align: left;
+  padding-left: 10px;
 }
 .rbc-month-view .rbc-header + .rbc-header {
   border-left: 1px solid #DDD;
@@ -254,16 +292,27 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
 }
+
+/*이거 하면 일요일 뿐 아니라 일, 월, 화, 수, 목, 금, 토 다 빨간색 되버리네...이상하다*/
+/*.rbc-month-header:nth-child(1) {*/
+/*color: red;*/
+/*}*/
+
+.headerLabelSunday{
+  color: red;
+}
+
+
 .rbc-month-row {
   display: -ms-flexbox;
   display: flex;
   position: relative;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  flex: 1 0 0;
   overflow: hidden;
   height: 100%;
 }
@@ -271,9 +320,17 @@ button.rbc-input::-moz-focus-inner {
   border-top: 1px solid #DDD;
 }
 .rbc-date-cell {
-  padding-right: 5px;
-  text-align: right;
+  padding-left: 10px;
+  text-align: left;
 }
+
+
+
+.rbc-date-cell:nth-child(1) {
+  color: red;
+}
+
+
 .rbc-date-cell.rbc-now {
   font-weight: bold;
 }
@@ -287,9 +344,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  flex: 1 0 0;
   overflow: hidden;
 }
 .rbc-day-bg + .rbc-day-bg {
@@ -319,9 +376,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  flex: 1 0 0;
   overflow: auto;
 }
 .rbc-agenda-view table {
@@ -375,12 +432,12 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   min-height: 100%;
 }
 .rbc-time-column .rbc-timeslot-group {
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 .rbc-timeslot-group {
   border-bottom: 1px solid #DDD;
@@ -388,13 +445,16 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
-      flex-flow: column nowrap;
+  flex-flow: column nowrap;
 }
 .rbc-time-gutter,
 .rbc-header-gutter {
   -ms-flex: none;
-      flex: none;
+  flex: none;
 }
+
+
+
 .rbc-label {
   padding: 0 5px;
 }
@@ -407,21 +467,21 @@ button.rbc-input::-moz-focus-inner {
   display: flex;
   max-height: 100%;
   -ms-flex-flow: column wrap;
-      flex-flow: column wrap;
+  flex-flow: column wrap;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
   overflow: hidden;
 }
 .rbc-day-slot .rbc-event-label {
   -ms-flex: none;
-      flex: none;
+  flex: none;
   padding-right: 5px;
   width: auto;
 }
 .rbc-day-slot .rbc-event-content {
   width: 100%;
   -ms-flex: 1 1 0px;
-      flex: 1 1 0;
+  flex: 1 1 0;
   word-wrap: break-word;
   line-height: 1;
   height: 100%;
@@ -432,7 +492,7 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-time-slot {
   -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  flex: 1 0 0;
 }
 .rbc-time-slot.rbc-now {
   font-weight: bold;
@@ -457,9 +517,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   width: 100%;
   border: 1px solid #DDD;
   min-height: 0;
@@ -468,9 +528,21 @@ button.rbc-input::-moz-focus-inner {
   white-space: nowrap;
 }
 .rbc-time-view .rbc-allday-cell {
-  width: 100%;
+  /*width: 100%;*/
+  /*수정*/
+  width: calc(100% - 79px);
+  border-left: 0px !important;
   position: relative;
+
+
 }
+
+/*수정. 내가 추가함.*/
+.rbc-day-bg{
+  flex-basis: 300px !important;
+  flex-grow: 1 !important;
+}
+
 .rbc-time-view .rbc-allday-events {
   position: relative;
   z-index: 4;
@@ -482,12 +554,13 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 0 0 auto;
-      flex: 0 0 auto;
+  flex: 0 0 auto;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
 }
 .rbc-time-header.rbc-overflowing {
-  border-right: 1px solid #DDD;
+  /*border-right: 1px solid #DDD;*/
+  margin-right: 0px !important;
 }
 .rbc-rtl .rbc-time-header.rbc-overflowing {
   border-right-width: 0;
@@ -505,7 +578,7 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-time-header .rbc-gutter-cell {
   -ms-flex: none;
-      flex: none;
+  flex: none;
 }
 .rbc-time-header > .rbc-gutter-cell + * {
   width: 100%;
@@ -514,17 +587,23 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 1 0 0%;
-      flex: 1 0 0%;
+  flex: 1 0 0%;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
   width: 100%;
   border-top: 2px solid #DDD;
-  overflow-y: auto;
+  /*overflow-y: auto; 수정*/
   position: relative;
+}
+
+
+/*수정. overflow 속성 새로 추가*/
+.rbc-overflowing{
+  margin-right: 0px !important;
 }
 .rbc-time-content > .rbc-time-gutter {
   -ms-flex: none;
-      flex: none;
+  flex: none;
 }
 .rbc-time-content > * + * > * {
   border-left: 1px solid #DDD;
@@ -536,9 +615,9 @@ button.rbc-input::-moz-focus-inner {
 .rbc-time-content > .rbc-day-slot {
   width: 100%;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .rbc-current-time-indicator {
   position: absolute;
@@ -562,4 +641,15 @@ button.rbc-input::-moz-focus-inner {
 .rbc-rtl .rbc-current-time-indicator::before {
   left: 0;
   right: -3px;
+}
+
+
+
+.afterRbcHeaderGutter{
+  position: absolute;
+  border-right: 1px solid #DDD;
+  border-left: 0px;
+  height: calc(100% - 138px);
+  left: 80px;
+  top: 138px;
 }
