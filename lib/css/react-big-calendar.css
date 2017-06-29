@@ -89,19 +89,21 @@ button.rbc-input::-moz-focus-inner {
   color: red;
 }
 
-
+/*수정*/
 .rbc-toolbar {
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-size: 16px;
+  height: 60px;
 }
 .rbc-toolbar .rbc-toolbar-label {
-  width: 100%;
-  padding: 0 10px;
-  text-align: center;
+  /*수정*/
+  padding: 0px 10px;
+  font-size: 27px;
+  line-height: 1;
+  color: #4D5461;
 }
 .rbc-toolbar button {
   color: #373a3c;
@@ -122,7 +124,8 @@ button.rbc-input::-moz-focus-inner {
   background-image: none;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   background-color: #38aee1;
-  border-color: #ffffff;
+  /*border-color: #ffffff;*/
+  color: #ffffff;
 }
 .rbc-toolbar button:active:hover,
 .rbc-toolbar button.rbc-active:hover,
@@ -142,9 +145,14 @@ button.rbc-input::-moz-focus-inner {
   background-color: #e6e6e6;
   border-color: #adadad;
 }
+
+/*여기 수정*/
 .rbc-btn-group {
-  display: inline-block;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
   white-space: nowrap;
+  margin-right: 10px;
 }
 .rbc-btn-group > button:first-child:not(:last-child) {
   border-top-right-radius: 0;
@@ -180,38 +188,40 @@ button.rbc-input::-moz-focus-inner {
 }
 
 
-.rbc-event {
+.rbc-event{
   cursor: pointer;
   padding: 2px 5px;
-  background-color: #3174ad;
   border-radius: 5px;
   color: #fff;
 }
 
+/*.calendarBox .colorFF0000{*/
+/*background-color: #FF0000;*/
+/*}*/
 
-.rbc-event-ptop {
-  cursor: pointer;
-  padding: 2px 5px;
-  background-color: #3174ad;
-  border-radius: 5px;
-  color: #fff;
-}
+/*.calendarBox .colorFF9933{*/
+/*background-color: #FF9933;*/
+/*}*/
 
-.rbc-event-group {
-  cursor: pointer;
-  padding: 2px 5px;
-  background-color: lightcoral;
-  border-radius: 5px;
-  color: #fff;
-}
+/*.calendarBox .colorF1C40F{*/
+/*background-color: #F1C40F;*/
+/*}*/
 
-.rbc-event-user {
-  cursor: pointer;
-  padding: 2px 5px;
-  background-color: yellowgreen;
-  border-radius: 5px;
-  color: #fff;
-}
+/*.calendarBox .color00CC00{*/
+/*background-color: #00CC00;*/
+/*}*/
+
+/*.calendarBox .color22A7F0{*/
+/*background-color: #22A7F0;*/
+/*}*/
+
+/*.calendarBox .colorCC66CC{*/
+/*background-color: #CC66CC;*/
+/*}*/
+
+/*.calendarBox .color996600{*/
+/*background-color: #996600;*/
+/*}*/
 
 
 .rbc-event.rbc-selected {
@@ -541,6 +551,7 @@ button.rbc-input::-moz-focus-inner {
 .rbc-day-bg{
   flex-basis: 300px !important;
   flex-grow: 1 !important;
+  border-left: 1px solid #DDD;
 }
 
 .rbc-time-view .rbc-allday-events {
@@ -597,7 +608,7 @@ button.rbc-input::-moz-focus-inner {
 }
 
 
-/*수정. overflow 속성 새로 추가*/
+/*여기 수정. overflow 속성 새로 추가*/
 .rbc-overflowing{
   margin-right: 0px !important;
 }
@@ -644,12 +655,41 @@ button.rbc-input::-moz-focus-inner {
 }
 
 
+.flexDiv{
+  flex-basis: 100px;
+  flex-grow: 1;
+}
 
-.afterRbcHeaderGutter{
-  position: absolute;
-  border-right: 1px solid #DDD;
-  border-left: 0px;
-  height: calc(100% - 138px);
-  left: 80px;
-  top: 138px;
+
+.previousBtn{
+  margin-left: 10px !important;
+  padding: 0px !important;
+  width: 28px;
+  height: 28px;
+}
+
+
+.nextBtn{
+  padding: 0px !important;
+  width: 28px;
+  height: 28px;
+}
+
+.todayBtn{
+  margin-left: 5px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  height: 28px;
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+}
+
+.previousBtnImg{
+  width:26px;
+  height: 26px;
+}
+
+.nextBtnImg{
+  width:26px;
+  height: 26px;
 }

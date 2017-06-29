@@ -257,7 +257,7 @@ export default class TimeGrid extends Component {
           >
             { message(messages).allDay }
           </div>
-          <div className="afterRbcHeaderGutter"></div>
+
           <DateContentRow
             now={now}
             minRows={2}
