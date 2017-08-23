@@ -22,9 +22,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: stretch;
-  align-items: stretch;
+      align-items: stretch;
 }
 .rbc-calendar *,
 .rbc-calendar *:before,
@@ -53,9 +53,8 @@ button.rbc-input::-moz-focus-inner {
   direction: rtl;
 }
 .rbc-off-range {
-  color: #b3b3b3 !important;
+  color: #b3b3b3;
 }
-
 .rbc-header {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,7 +65,6 @@ button.rbc-input::-moz-focus-inner {
   font-weight: bold;
   font-size: 90%;
   min-height: 0;
-  line-height: 30px; /*여기 수정*/
 }
 .rbc-header > a,
 .rbc-header > a:active,
@@ -77,34 +75,26 @@ button.rbc-input::-moz-focus-inner {
 .rbc-row-content {
   position: relative;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   z-index: 4;
 }
 .rbc-today {
   background-color: #eaf6ff;
 }
-
-.holiday {
-  color: red;
-}
-
-/*수정*/
 .rbc-toolbar {
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
-  /* margin-bottom: 10px; */
+      align-items: center;
+  margin-bottom: 10px;
   font-size: 16px;
-  height: 60px;
 }
 .rbc-toolbar .rbc-toolbar-label {
-  /*수정*/
-  padding: 0px 10px;
-  font-size: 27px;
-  line-height: 1;
-  color: #4D5461;
+  width: 100%;
+  padding: 0 10px;
+  text-align: center;
 }
 .rbc-toolbar button {
   color: #373a3c;
@@ -116,7 +106,7 @@ button.rbc-input::-moz-focus-inner {
   background-image: none;
   border: 1px solid #ccc;
   padding: .375rem 1rem;
-  /*border-radius: 4px;*/
+  border-radius: 4px;
   line-height: normal;
   white-space: nowrap;
 }
@@ -124,16 +114,15 @@ button.rbc-input::-moz-focus-inner {
 .rbc-toolbar button.rbc-active {
   background-image: none;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  background-color: #38aee1;
-  /*border-color: #ffffff;*/
-  color: #ffffff;
+  background-color: #e6e6e6;
+  border-color: #adadad;
 }
 .rbc-toolbar button:active:hover,
 .rbc-toolbar button.rbc-active:hover,
 .rbc-toolbar button:active:focus,
 .rbc-toolbar button.rbc-active:focus {
-  color: #ffffff;
-  background-color: #38aee1;
+  color: #373a3c;
+  background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
 .rbc-toolbar button:focus {
@@ -146,14 +135,9 @@ button.rbc-input::-moz-focus-inner {
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-
-/*여기 수정*/
 .rbc-btn-group {
-  display: -webkit-box;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
+  display: inline-block;
   white-space: nowrap;
-  margin-right: 10px;
 }
 .rbc-btn-group > button:first-child:not(:last-child) {
   border-top-right-radius: 0;
@@ -187,44 +171,13 @@ button.rbc-input::-moz-focus-inner {
 .rbc-btn-group + button {
   margin-left: 10px;
 }
-
-
-.rbc-event{
+.rbc-event {
   cursor: pointer;
   padding: 2px 5px;
+  background-color: #3174ad;
   border-radius: 5px;
   color: #fff;
 }
-
-/*.calendarBox .colorFF0000{*/
-/*background-color: #FF0000;*/
-/*}*/
-
-/*.calendarBox .colorFF9933{*/
-/*background-color: #FF9933;*/
-/*}*/
-
-/*.calendarBox .colorF1C40F{*/
-/*background-color: #F1C40F;*/
-/*}*/
-
-/*.calendarBox .color00CC00{*/
-/*background-color: #00CC00;*/
-/*}*/
-
-/*.calendarBox .color22A7F0{*/
-/*background-color: #22A7F0;*/
-/*}*/
-
-/*.calendarBox .colorCC66CC{*/
-/*background-color: #CC66CC;*/
-/*}*/
-
-/*.calendarBox .color996600{*/
-/*background-color: #996600;*/
-/*}*/
-
-
 .rbc-event.rbc-selected {
   background-color: #265985;
 }
@@ -254,7 +207,7 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-  flex-direction: row !important;
+      flex-direction: row;
 }
 .rbc-row-segment {
   padding: 0 1px 1px 1px;
@@ -277,21 +230,18 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+      flex: 1 0 0;
   width: 100%;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   height: 100%;
 }
 .rbc-month-view .rbc-header {
   border-bottom: 1px solid #DDD;
-  text-align: left;
-  padding-left: 10px;
-  line-height: 30px;  /*여기 수정*/
 }
 .rbc-month-view .rbc-header + .rbc-header {
   border-left: 1px solid #DDD;
@@ -304,29 +254,16 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-  flex-direction: row;
-  height: 30px;
-  background-color: #f8f8f8;
+      flex-direction: row;
 }
-
-/*이거 하면 일요일 뿐 아니라 일, 월, 화, 수, 목, 금, 토 다 빨간색 되버리네...이상하다*/
-/*.rbc-month-header:nth-child(1) {*/
-/*color: red;*/
-/*}*/
-
-.headerLabelSunday{
-  color: red;
-}
-
-
 .rbc-month-row {
   display: -ms-flexbox;
   display: flex;
   position: relative;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+      flex: 1 0 0;
   overflow: hidden;
   height: 100%;
 }
@@ -334,17 +271,9 @@ button.rbc-input::-moz-focus-inner {
   border-top: 1px solid #DDD;
 }
 .rbc-date-cell {
-  padding-left: 10px;
-  text-align: left;
+  padding-right: 5px;
+  text-align: right;
 }
-
-
-
-.rbc-date-cell:nth-child(1) {
-  color: red;
-}
-
-
 .rbc-date-cell.rbc-now {
   font-weight: bold;
 }
@@ -358,9 +287,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-  flex-direction: row;
+      flex-direction: row;
   -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+      flex: 1 0 0;
   overflow: hidden;
 }
 .rbc-day-bg + .rbc-day-bg {
@@ -390,9 +319,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+      flex: 1 0 0;
   overflow: auto;
 }
 .rbc-agenda-view table {
@@ -446,12 +375,12 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   min-height: 100%;
 }
 .rbc-time-column .rbc-timeslot-group {
   -ms-flex: 1;
-  flex: 1;
+      flex: 1;
 }
 .rbc-timeslot-group {
   border-bottom: 1px solid #DDD;
@@ -459,16 +388,13 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
+      flex-flow: column nowrap;
 }
 .rbc-time-gutter,
 .rbc-header-gutter {
   -ms-flex: none;
-  flex: none;
+      flex: none;
 }
-
-
-
 .rbc-label {
   padding: 0 5px;
 }
@@ -481,21 +407,21 @@ button.rbc-input::-moz-focus-inner {
   display: flex;
   max-height: 100%;
   -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
+      flex-flow: column wrap;
   -ms-flex-align: start;
-  align-items: flex-start;
+      align-items: flex-start;
   overflow: hidden;
 }
 .rbc-day-slot .rbc-event-label {
   -ms-flex: none;
-  flex: none;
+      flex: none;
   padding-right: 5px;
   width: auto;
 }
 .rbc-day-slot .rbc-event-content {
   width: 100%;
   -ms-flex: 1 1 0px;
-  flex: 1 1 0;
+      flex: 1 1 0;
   word-wrap: break-word;
   line-height: 1;
   height: 100%;
@@ -506,7 +432,7 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-time-slot {
   -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+      flex: 1 0 0;
 }
 .rbc-time-slot.rbc-now {
   font-weight: bold;
@@ -531,9 +457,9 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
   -ms-flex: 1;
-  flex: 1;
+      flex: 1;
   width: 100%;
   border: 1px solid #DDD;
   min-height: 0;
@@ -542,22 +468,9 @@ button.rbc-input::-moz-focus-inner {
   white-space: nowrap;
 }
 .rbc-time-view .rbc-allday-cell {
-  /*width: 100%;*/
-  /*수정*/
-  width: calc(100% - 79px);
-  border-left: 0px !important;
+  width: 100%;
   position: relative;
-
-
 }
-
-/*수정. 내가 추가함.*/
-.rbc-day-bg{
-  flex-basis: 300px !important;
-  flex-grow: 1 !important;
-  border-left: 1px solid #DDD;
-}
-
 .rbc-time-view .rbc-allday-events {
   position: relative;
   z-index: 4;
@@ -569,13 +482,12 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+      flex: 0 0 auto;
   -ms-flex-direction: column;
-  flex-direction: column;
+      flex-direction: column;
 }
 .rbc-time-header.rbc-overflowing {
-  /*border-right: 1px solid #DDD;*/
-  margin-right: 0px !important;
+  border-right: 1px solid #DDD;
 }
 .rbc-rtl .rbc-time-header.rbc-overflowing {
   border-right-width: 0;
@@ -590,14 +502,10 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-time-header > .rbc-row:first-child {
   border-bottom: 1px solid #DDD;
-
-  /*여기 수정*/
-  height: 30px;
-  background-color: #f8f8f8;
 }
 .rbc-time-header .rbc-gutter-cell {
   -ms-flex: none;
-  flex: none;
+      flex: none;
 }
 .rbc-time-header > .rbc-gutter-cell + * {
   width: 100%;
@@ -606,23 +514,17 @@ button.rbc-input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 1 0 0%;
-  flex: 1 0 0%;
+      flex: 1 0 0%;
   -ms-flex-align: start;
-  align-items: flex-start;
+      align-items: flex-start;
   width: 100%;
   border-top: 2px solid #DDD;
-  /*overflow-y: auto; 수정*/
+  overflow-y: auto;
   position: relative;
-}
-
-
-/*여기 수정. overflow 속성 새로 추가*/
-.rbc-overflowing{
-  margin-right: 0px !important;
 }
 .rbc-time-content > .rbc-time-gutter {
   -ms-flex: none;
-  flex: none;
+      flex: none;
 }
 .rbc-time-content > * + * > * {
   border-left: 1px solid #DDD;
@@ -634,9 +536,9 @@ button.rbc-input::-moz-focus-inner {
 .rbc-time-content > .rbc-day-slot {
   width: 100%;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .rbc-current-time-indicator {
   position: absolute;
@@ -660,54 +562,4 @@ button.rbc-input::-moz-focus-inner {
 .rbc-rtl .rbc-current-time-indicator::before {
   left: 0;
   right: -3px;
-}
-
-
-.flexDiv{
-  flex-basis: 100px;
-  flex-grow: 1;
-}
-
-
-.previousBtn{
-  margin-left: 10px !important;
-  padding: 0px !important;
-  width: 20px;
-  height: 28px;
-}
-
-
-.nextBtn{
-  padding: 0px !important;
-  width: 20px;
-  height: 28px;
-}
-
-.todayBtn{
-  margin-left: 5px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  height: 28px;
-  padding-right: 5px !important;
-  padding-left: 5px !important;
-}
-
-.previousBtnImg{
-  width:14px;
-  height: 14px;
-}
-
-.nextBtnImg{
-  width:14px;
-  height: 14px;
-}
-
-.toolbarRightBtn{
-  padding: 4px !important;
-  margin-left: 5px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  height: 28px;
-  padding-right: 5px !important;
-  padding-left: 5px !important;
 }
