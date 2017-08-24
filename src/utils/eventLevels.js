@@ -77,7 +77,7 @@ export function segsOverlap(seg, otherSegs) {
 }
 
 
-export function sortEvents(evtA, evtB, { startAccessor, endAccessor, allDayAccessor }) {
+export function sortEvents(evtA, evtB, { startAccessor, endAccessor, allDayAccessor }) { //allDayAccessor는 종일인지 비종일인지 true, false값을 리턴하는 함수. 리액트빅캘린더 컴포넌트 도입할때 같이 넘겨준다.
   let startSort = +dates.startOf(get(evtA, startAccessor), 'day') - +dates.startOf(get(evtB, startAccessor), 'day')
 
   let durA = dates.diff(
@@ -90,8 +90,22 @@ export function sortEvents(evtA, evtB, { startAccessor, endAccessor, allDayAcces
       , dates.ceil(get(evtB, endAccessor), 'day')
       , 'day');
 
+  let results = (durA > 1 && durB > 1) ? Math.max(durA, 1) - Math.max(durB, 1) : Math.max(durB, 1) - Math.max(durA, 1)
+  let results2 = 0;
+    if(evtA.schedule_option === 'all_day' && evtB.schedule_option === 'all_day'){
+      results2 = evtA.period_type_num - evtB.period_type_num;
+    }
+
+    let results3 = evtA.schedule_idx - evtB.schedule_idx;
+
+
+
+
   return startSort // sort by start Day first
-    || Math.max(durA, 1) - Math.max(durB, 1)   // events spanning multiple days go first
+    // || Math.max(durA, 1) - Math.max(durB, 1)   // events spanning multiple days go first
+    || results
+    || results2
     || !!get(evtB, allDayAccessor) - !!get(evtA, allDayAccessor) // then allDay single day events
     || +get(evtA, startAccessor) - +get(evtB, startAccessor)     // then sort by start time
+    || results3
 }
