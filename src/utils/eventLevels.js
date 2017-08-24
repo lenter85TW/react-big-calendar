@@ -104,7 +104,7 @@ export function sortEvents(evtA, evtB, { startAccessor, endAccessor, allDayAcces
   return startSort // sort by start Day first
     // || Math.max(durA, 1) - Math.max(durB, 1)   // events spanning multiple days go first
     || results
-    || results2
+    //|| results2
     || !!get(evtB, allDayAccessor) - !!get(evtA, allDayAccessor) // then allDay single day events
     || +get(evtA, startAccessor) - +get(evtB, startAccessor)     // then sort by start time
     || results3
